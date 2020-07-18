@@ -1,0 +1,10 @@
+sudo: required
+services:
+   - docker
+   
+before_install:
+   - docker build -t deboyle007/mysimpleweb
+   
+script:
+   - docker run deboyle007/mysimpleweb npm run test -- --coverage
+  
